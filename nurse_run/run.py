@@ -27,7 +27,7 @@ class Config:
 
     @classmethod
     def load_from_dotenv(cls):
-        dotenv.load_dotenv(override=True)
+        dotenv.load_dotenv(dotenv.find_dotenv(usecwd=True), override=True)
 
         result = cls()
         result.retry_times = int(os.getenv('NURSE_RUN_RETRY_TIMES', result.retry_times))
