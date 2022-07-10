@@ -1,0 +1,5 @@
+.idea/
+/build
+/dist
+/nurse_run.egg-info
+*.py[co]
