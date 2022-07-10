@@ -52,7 +52,7 @@ class Config:
 
 
 def run():
-    p = subprocess.run(sys.argv[1:])
+    p = subprocess.run(sys.argv[1:], shell=True)
     if p.returncode != 0:
         print('\n******** Return Code: %d ********\n' % p.returncode)
 
