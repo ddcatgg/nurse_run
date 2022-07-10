@@ -4,6 +4,7 @@ import os
 import time
 import importlib
 import subprocess
+import shlex
 from dataclasses import dataclass
 from typing import Callable, Optional
 
@@ -52,7 +53,7 @@ class Config:
 
 
 def run():
-    p = subprocess.run(sys.argv[1:], shell=True)
+    p = subprocess.run(subprocess.list2cmdline(sys.argv[1:]), shell=True)
     if p.returncode != 0:
         print('\n******** Return Code: %d ********\n' % p.returncode)
 
